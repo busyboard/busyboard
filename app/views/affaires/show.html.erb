@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Reference:</b>
+  <%= @affaire.reference %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%= @affaire.total %>
+</p>
+
+<p>
+  <b>Phase:</b>
+  <%= @affaire.phase %>
+</p>
+
+<p>
+  <b>Etat:</b>
+  <%= @affaire.etat %>
+</p>
+
+<p>
+  <b>Date debut:</b>
+  <%= @affaire.date_debut %>
+</p>
+
+<p>
+  <b>Duree:</b>
+  <%= @affaire.duree %>
+</p>
+
+<p>
+  <b>Receptioner:</b>
+  <%= @affaire.receptioner %>
+</p>
+
+<p>
+  <b>Nom:</b>
+  <%= @affaire.nom %>
+</p>
+
+
+<%= link_to 'Edit', edit_affaire_path(@affaire) %> |
+<%= link_to 'Back', affaires_path %>

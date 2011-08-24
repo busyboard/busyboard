@@ -1,0 +1,50 @@
+<%= form_for(@affaire) do |f|  %>
+  <% if @affaire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@affaire.errors.count, "error") %> prohibited this affaire from being saved:</h2>
+
+      <ul>
+      <% @affaire.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :reference %><br />
+    <%= f.text_field :reference %>
+  </div>
+  <div class="field">
+    <%= f.label :total %><br />
+    <%= f.text_field :total %>
+  </div>
+  <div class="field">
+    <%= f.label :phase %><br />
+    <%= f.text_field :phase %>
+  </div>
+  <div class="field">
+    <%= f.label :etat %><br />
+    <%= f.text_field :etat %>
+  </div>
+  <div class="field">
+    <%= f.label :date_debut %><br />
+    <%= f.datetime_select :date_debut %>
+  </div>
+  <div class="field">
+    <%= f.label :duree %><br />
+    <%= f.number_field :duree %>
+  </div>
+  <div class="field">
+    <%= f.label :receptioner %><br />
+    <%= f.text_field :receptioner %>
+  </div>
+  <div class="field">
+    <%= f.label :nom %><br />
+    <%= f.text_field :nom %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+ 

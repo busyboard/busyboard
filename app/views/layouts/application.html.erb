@@ -8,7 +8,26 @@
 </head>
 <body>
 
-<%= yield %>
-
+<div id="page">	
+	<div id="page-header"> 
+		<span class="title">Buzyboard</span>
+		<div id="menu-tabs">
+			<ul>
+				<li class="selected-menu">Affaires</li>
+				<li>Intervenants</li>
+				<li>Collaborateurs</li>
+				<li>Carnet d'adresses</li>
+				<li>Administration</li>
+			</ul>
+		</div>			
+	</div>
+	<br style="clear: both">
+	<div id="content">
+		<%= yield %>
+	</div>
+	<div id="rightpanel">
+		<%= yield :rightpanel %>
+	</div>
+</div>
 </body>
 </html>

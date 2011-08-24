@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  reference: MyString
+  total: 9.99
+  phase: 
+  etat: 
+  date_debut: 2011-08-07 12:32:33
+  duree: 1
+  receptioner: 
+  nom: MyString
+
+two:
+  reference: MyString
+  total: 9.99
+  phase: 
+  etat: 
+  date_debut: 2011-08-07 12:32:33
+  duree: 1
+  receptioner: 
+  nom: MyString

@@ -1,0 +1,44 @@
+
+<% content_for :rightpanel do %>
+ 	<ul> 
+ 		<li>Visualiser mes affaires en cours</li>
+ 		<li><%= link_to "Créer une nouvelle affaire", new_affaire_path, :remote => true %></li>	
+ 	</ul>
+<% end %>
+
+<div id="affaires">
+	<h1>Listing affaires</h1>
+	
+	<table>
+	  <tr>
+	    <th>Reference</th>
+	    <th>Total</th>
+	    <th>Phase</th>
+	    <th>Etat</th>
+	    <th>Date debut</th>
+	    <th>Duree</th>
+	    <th>Receptioner</th>
+	    <th>Nom</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	
+	<% @affaires.each do |affaire| %>
+	  <tr>
+	    <td><%= affaire.reference %></td>
+	    <td><%= affaire.total %></td>
+	    <td><%= affaire.phase %></td>
+	    <td><%= affaire.etat %></td>
+	    <td><%= affaire.date_debut %></td>
+	    <td><%= affaire.duree %></td>
+	    <td><%= affaire.receptioner %></td>
+	    <td><%= affaire.nom %></td>
+	    <td><%= link_to 'Show', affaire %></td>
+	    <td><%= link_to 'Edit', edit_affaire_path(affaire) %></td>
+	    <td><%= link_to 'Destroy', affaire, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>
+<br />

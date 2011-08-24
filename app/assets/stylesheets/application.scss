@@ -1,0 +1,97 @@
+	/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+$gray-blue: #9498ab;
+
+@mixin rounded-corners($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+body {
+  background-image: url('/assets/background.png');
+  background-repeat: repeat-x;
+  background-color: #5c6482; 
+  color: #333;
+ }
+
+.title
+{
+	color: #b3becf;
+	font-size: 1.5em;
+	margin: 10px;
+}
+
+#page
+{
+	background-color: white;
+	width: 960px;
+	height: 600px;
+	margin: 0 auto;
+	padding: 10px;
+	@include rounded-corners(8px);
+		
+}
+
+#page-header
+{
+	position: relative;
+	display: block;
+	height: 100px;
+	background-color: #566783;
+	margin: 0px;
+	padding: 0px;
+}
+
+#menu-tabs
+{
+	position: absolute;
+	bottom: 0px;
+	margin-bottom: 14px; 
+	height: 25px;
+	cursor: pointer;	
+	ul
+	{	
+		li{
+			float: left;
+			list-style-type: none;
+			height: 25px;	
+			text-align: center;
+			border: solid 1px darken($gray-blue, 20%);
+			background-color: #44485f; 
+			padding: 0px 20px;
+			margin: 0px 2px;			
+			color: #e7812f;
+			font-size: 9pt;
+		}
+		
+		li.selected-menu{
+			background-color: white;
+			border-bottom-width: 0px;
+			color: $gray-blue;
+		}
+			
+	}
+		
+}
+
+#content
+{
+	width: 760;
+	float: left;	
+}
+
+#rightpanel
+{
+	width: 200px;
+	display: block;
+	background-color: #c6cadb;
+	float: right;
+}
+
