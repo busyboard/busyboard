@@ -1,42 +1,53 @@
 
 <% content_for :rightpanel do %>
- 	<ul> 
- 		<li>Visualiser mes affaires en cours</li>
- 		<li><%= link_to "Créer une nouvelle affaire", new_affaire_path, :remote => true %></li>	
- 	</ul>
+
+	<%= render :partial => "menu", :object => @sitemap.children(@sitemap.find(@menu_id)) %>
+ 	
 <% end %>
 
 <div id="affaires">
-	<h1>Listing affaires</h1>
+	<h1>Affaires</h1>
 	
 	<table>
 	  <tr>
 	    <th>Reference</th>
-	    <th>Total</th>
-	    <th>Phase</th>
-	    <th>Etat</th>
-	    <th>Date debut</th>
-	    <th>Duree</th>
-	    <th>Receptioner</th>
 	    <th>Nom</th>
-	    <th></th>
-	    <th></th>
-	    <th></th>
+	    <th>Total</th>	   
+	    <th>Date debut</th>
+	    <th>Duree</th>	    
 	  </tr>
 	
 	<% @affaires.each do |affaire| %>
 	  <tr>
 	    <td><%= affaire.reference %></td>
-	    <td><%= affaire.total %></td>
-	    <td><%= affaire.phase %></td>
-	    <td><%= affaire.etat %></td>
-	    <td><%= affaire.date_debut %></td>
-	    <td><%= affaire.duree %></td>
-	    <td><%= affaire.receptioner %></td>
-	    <td><%= affaire.nom %></td>
-	    <td><%= link_to 'Show', affaire %></td>
-	    <td><%= link_to 'Edit', edit_affaire_path(affaire) %></td>
-	    <td><%= link_to 'Destroy', affaire, :confirm => 'Are you sure?', :method => :delete %></td>
+	    <td><%= affaire.nom %></td>	    
+	    <td><%= affaire.total %></td>	    	    
+	    <td><%= affaire.date_debut.strftime("%d-%m-%Y") %></td>
+	    <td><%= affaire.duree %></td>	    
+	    
+	    <td>
+	    	<%= link_to affaire do %>
+	    		<%= image_tag "show.jpg" %>
+	    	<% end %>
+	    </td>
+	    
+	    <td>
+	    	<%= link_to edit_affaire_path(affaire) do %>
+	    		<%= image_tag "edit.png"%>
+	    	<% end %>	
+	    </td>
+	    
+	    <td>
+	    	<%= link_to affaire, :confirm => 'Are you sure?', :method => :delete  do %>
+	    		<%= image_tag "destroy.png"%>
+	    	<% end %>
+	    </td>
+	    
+	    <td>
+	    	<%= link_to affaire_notes_url(affaire) do %>
+	    		<%= image_tag "note.png"%>
+	    	<% end %>		
+	    </td>
 	  </tr>
 	<% end %>
 	</table>

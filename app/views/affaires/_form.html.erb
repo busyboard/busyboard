@@ -20,12 +20,12 @@
     <%= f.text_field :total %>
   </div>
   <div class="field">
-    <%= f.label :phase %><br />
-    <%= f.text_field :phase %>
+    <%= f.label :phase %>
+    <%= f.select :phase_id, @phases.collect{|p| [p.name, p.id]} if @phases != nil	 %>
   </div>
   <div class="field">
-    <%= f.label :etat %><br />
-    <%= f.text_field :etat %>
+    <%= f.label :etat %>
+    <%= f.check_box :etat %>
   </div>
   <div class="field">
     <%= f.label :date_debut %><br />
@@ -33,11 +33,11 @@
   </div>
   <div class="field">
     <%= f.label :duree %><br />
-    <%= f.number_field :duree %>
+    <%= f.text_field :duree %>
   </div>
   <div class="field">
     <%= f.label :receptioner %><br />
-    <%= f.text_field :receptioner %>
+    <%= f.check_box :receptioner %>
   </div>
   <div class="field">
     <%= f.label :nom %><br />

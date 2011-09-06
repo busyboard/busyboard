@@ -2,8 +2,8 @@ class AffairesController < ApplicationController
   # GET /affaires
   # GET /affaires.json
   def index
-    @affaires = Affaire.all
-
+    @affaires = Affaire.all  
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @affaires }
@@ -14,7 +14,7 @@ class AffairesController < ApplicationController
   # GET /affaires/1.json
   def show
     @affaire = Affaire.find(params[:id])
-
+   
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @affaire }
@@ -25,15 +25,19 @@ class AffairesController < ApplicationController
   # GET /affaires/new.json
   def new
     @affaire = Affaire.new
+    @phases = Phase.all
     
-    if request.xhr?
-        render @affaire
+    respond_to do |format|  
+      format.html # show.html.erb
+      format.json { render :json => @affaire }
+      format.js
     end
   end
 
   # GET /affaires/1/edit
   def edit
     @affaire = Affaire.find(params[:id])
+    @phases = Phase.all
   end
 
   # POST /affaires

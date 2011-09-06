@@ -10,17 +10,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110807103233) do
+ActiveRecord::Schema.define(:version => 20110903080135) do
 
   create_table "affaires", :force => true do |t|
     t.string   "reference"
     t.decimal  "total"
     t.string   "phase"
-    t.string   "etat"
+    t.boolean  "etat"
     t.datetime "date_debut"
     t.integer  "duree"
     t.boolean  "receptioner"
     t.string   "nom"
+    t.integer  "phase_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notes", :force => true do |t|
+    t.text     "note"
+    t.integer  "affaire_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "phases", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

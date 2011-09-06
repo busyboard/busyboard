@@ -1,3 +1,26 @@
 // Place all the styles related to the Affaires controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$blue: #356495;
+
+#affaires
+{
+  font-size: 0.7em;
+  width: 70%;
+  margin: 0 auto;
+
+  th{
+    padding: 1px 30px;   
+    background-color: $blue;
+    color: white; 
+    font-size: 0.9em;
+    border-top:3px outset $blue;
+    border-bottom:3px outset $blue;
+  } 
+  
+  td{
+    padding-left: 10px;
+  }
+  
+}

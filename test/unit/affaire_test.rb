@@ -6,7 +6,11 @@ class AffaireTest < ActiveSupport::TestCase
   # end
   
   
-  test "create new affaire" do
-    
+  test "save new affaire should fail" do
+      affaire = Affaire.new
+      assert !affaire.save
   end
+  
+  
+  
 end

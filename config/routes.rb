@@ -1,5 +1,17 @@
 Busyboard::Application.routes.draw do
-  resources :affaires
+
+  #Default root
+  root :to => "affaires#index"
+  
+  resources :notes   
+
+  resources :administrateurs
+
+  resources :phases
+
+  resources :affaires do
+    resources :notes    
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
