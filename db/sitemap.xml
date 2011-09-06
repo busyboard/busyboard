@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sitemap title="home">
+ 	<sitenode title="affaire" controller="affaires" action="index">
+ 		<sitenode title="nouvelle affaire" controller="affaires" action="new" />
+ 		<sitenode title="affaire en cours" controller="affaires" action="index" />		
+ 		<sitenode title="note" controller="notes" action="index">
+ 			<sitenode title="nouvelle note" controller="notes" action="new"/>
+ 			<sitenode title="mettre a jour une note" controller="notes" action="update" />			
+ 		</sitenode>
+ 	</sitenode>
+ 	<!--
+ 	<sitenode title="Intervenants" controller="" action=""></sitenode>
+ 	<sitenode title="Collaborateurs" controller="" action=""></sitenode>
+ 	<sitenode title="Carnet d'adresse" controller="" action=""></sitenode>
+ 	-->
+ 	<sitenode title="Administration" controller="administrateurs" action="index"></sitenode> 
+</sitemap>

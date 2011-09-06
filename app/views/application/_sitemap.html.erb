@@ -1,0 +1,4 @@
+
+<% sitemap.sitemap(@menu_id).each do |node| %>
+	<span><%= node.attributes.get_attribute("title").value if node.attributes.get_attribute("title") %></span> :
+<% end %>
