@@ -10,15 +10,22 @@ include REXML
 #
 class Sitemap
   attr_accessor :sitemap
+  attr_accessor :currentMenuId
   
   #
   # => Default constructor
   # => xml: Can be a file to load or a xml string
   # => generateId: by default true will generate automatically the ids. 
   # => If false the id will not be generated
-  def initialize(xml, generateIds = true)
+  def initialize(xml, generateIds = true)     
       load(xml, generateIds)
   end
+  
+  
+  def currentMenuId=(value)
+    @currentMenuId = value
+  end
+
    
   #
   # => This method will go through each child element of the
@@ -53,9 +60,10 @@ class Sitemap
   end
   
   #
-  # => Get all children of the given element
+  # => Get all children of the element corresponding to the given id
   #
-  def children(node)
+  def children(uid)
+    node = find(uid)
     node.elements
   end
   

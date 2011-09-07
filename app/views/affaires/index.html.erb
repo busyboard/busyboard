@@ -1,7 +1,7 @@
 
 <% content_for :rightpanel do %>
 
-	<%= render :partial => "menu", :object => @sitemap.children(@sitemap.find(@menu_id)) %>
+	<%= render :partial => "menu", :object => @sitemap.children(@sitemap.currentMenuId) %>
  	
 <% end %>
 

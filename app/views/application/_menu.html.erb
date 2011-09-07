@@ -4,7 +4,7 @@
 		<li>
 			<%= link_to node.attributes.get_attribute("title").value, 
 						:controller => node.attributes.get_attribute("controller").value, 
-						:action => node.attributes.get_attribute("action").value, :id => node.attributes.get_attribute("id").value  %>	
+						:action => node.attributes.get_attribute("action").value, :sitemapId => node.attributes.get_attribute("id").value  %>	
 		</li>
 	<% end %>
 </ul>

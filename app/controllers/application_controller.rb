@@ -20,17 +20,11 @@ class ApplicationController < ActionController::Base
      # Get the menu id corresponding to the selected menu
      # If none are selected by default it will take the first
      # which is affaire 
-     if params[:id] == nil
-       
-        session[:menuid] = @sitemap.id(@sitemap.first)
+     if params[:sitemapId] == nil
+       @sitemap.currentMenuId = @sitemap.id(@sitemap.first)
      else
-       session[:menuid] = params[:id] 
+       @sitemap.currentMenuId = params[:sitemapId] 
      end
      
-     # Get the top sitemap nodes. That are the one just bellow the root node.    
-     @menus = @sitemap.top_elements 
-     
-     # Get the selected menu id
-     @menu_id = session[:menuid]
   end
 end
