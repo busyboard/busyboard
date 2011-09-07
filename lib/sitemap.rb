@@ -21,7 +21,9 @@ class Sitemap
       load(xml, generateIds)
   end
   
-  
+  #
+  # => Setter for the CurrentMenuId property
+  #
   def currentMenuId=(value)
     @currentMenuId = value
   end
