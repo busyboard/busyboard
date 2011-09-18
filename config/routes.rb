@@ -1,5 +1,7 @@
 Busyboard::Application.routes.draw do
 
+  resources :contacts
+
   #Default root
   root :to => "affaires#index"
   
@@ -9,6 +11,7 @@ Busyboard::Application.routes.draw do
 
   resources :phases
 
+  resources :affaires, :has_many => :contacts
   resources :affaires do
     resources :notes    
   end

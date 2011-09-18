@@ -1,3 +1,4 @@
+# hi there
 class PhasesController < ApplicationController
   # GET /phases
   # GET /phases.json

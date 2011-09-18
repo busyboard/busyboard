@@ -79,7 +79,7 @@ class Sitemap
   #
   # => This method will return an array
   # => cotaining the list of element from the
-  # => the root to the selected menu
+  # => the root to the given uid
   #
   def sitemap(uid)
       siteMapNodes = []
@@ -92,14 +92,37 @@ class Sitemap
       
       siteMapNodes.reverse
   end
-  
+ 
   #
   # => Return the structure in a string
   # 
   def to_string
        @sitemap.root.to_s
   end 
-   
+  
+
+  #
+  # => Return a url coresponding to the given 
+  #   tree node.
+  #
+  def url(uid)
+      nodes = sitemap(uid)
+      
+      # if action = index url => get /affaires
+      # if action = show  url => get /affaire/id
+      # if action = new   url => post /affaire/id
+      # if action = edit  url => post /affaire/id
+      # if action = update url => post /affaire/id
+      # if node has a parent url => /affaire/id/notes
+      # if node has a pareent and action = edit url => /affaire/id/note/id
+
+      nodes.each do |node|
+          if not node == @sitemap.root
+              
+          end  
+      end      
+  end
+
   #
   # => The load methos will load the xml sitemap
   # => end will give to each element a unique id.

@@ -1,3 +1,4 @@
+<div class="affaire_form">
 <%= form_for(@affaire) do |f|  %>
   <% if @affaire.errors.any? %>
     <div id="error_explanation">
@@ -46,4 +47,15 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>
+
+<div class="contact_form">
+  
+    <%= f.fields_for :contact do |contact| %>
+      <%= render :partial => "contacts/form", :locals => { :f => contact } %> 
+    <% end %>
+
+</div>
+
+
 <% end %>

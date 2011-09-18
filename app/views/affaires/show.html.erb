@@ -12,7 +12,7 @@
 
 <p>
   <b>Phase:</b>
-  <%= @affaire.phase.name %>
+  <%= @affaire.phase.name if @affaire.phase != nil %>
 </p>
 
 <p>
@@ -40,6 +40,61 @@
   <%= @affaire.nom %>
 </p>
 
+<div class="contact_form">
+ <p>
+  <b>Rue:</b>
+  <%= @contact.rue %>
+</p>
 
+<p>
+  <b>Numero:</b>
+  <%= @contact.numero %>
+</p>
+
+<p>
+  <b>Ville:</b>
+  <%= @contact.ville %>
+</p>
+
+<p>
+  <b>Pay:</b>
+  <%= @contact.pay %>
+</p>
+
+<p>
+  <b>Fixe:</b>
+  <%= @contact.fixe %>
+</p>
+
+<p>
+  <b>Mobile:</b>
+  <%= @contact.mobile %>
+</p>
+
+<p>
+  <b>Autre:</b>
+  <%= @contact.autre %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @contact.email %>
+</p>
+
+<p>
+  <b>Contactable:</b>
+  <%= @contact.contactable_id %>
+</p>
+
+<p>
+  <b>Contactable type:</b>
+  <%= @contact.contactable_type %>
+</p>
+
+   
+</div>
 <%= link_to 'Edit', edit_affaire_path(@affaire) %> |
 <%= link_to 'Back', affaires_path %>
+
+
+

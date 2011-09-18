@@ -1,4 +1,7 @@
 class AffairesController < ApplicationController
+  # # hi there
+  # # hi there
+  # # hi there
   # GET /affaires
   # GET /affaires.json
   def index
@@ -14,7 +17,8 @@ class AffairesController < ApplicationController
   # GET /affaires/1.json
   def show
     @affaire = Affaire.find(params[:id])
-   
+    @contact = @affaire.contact
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @affaire }
@@ -26,7 +30,10 @@ class AffairesController < ApplicationController
   def new
     @affaire = Affaire.new
     @phases = Phase.all
-    
+  
+    @contact = Contact.new 
+    @affaire.contact = @contact
+
     respond_to do |format|  
       format.html # show.html.erb
       format.json { render :json => @affaire }
@@ -37,6 +44,14 @@ class AffairesController < ApplicationController
   # GET /affaires/1/edit
   def edit
     @affaire = Affaire.find(params[:id])
+
+    if @affaire.contact
+        @contact = @affaire.contact
+    else
+        @contact = Contact.new
+        @affaire.contact = @contact 
+    end
+
     @phases = Phase.all
   end
 
@@ -44,6 +59,7 @@ class AffairesController < ApplicationController
   # POST /affaires.json
   def create
     @affaire = Affaire.new(params[:affaire])
+    @contact = @affaire.contact
 
     respond_to do |format|
       if @affaire.save
